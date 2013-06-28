@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+ <com.google.android.maps.MapView
+ 	android:layout_width="fill_parent"
+ 	android:layout_height="fill_parent"
+ 	android:enabled="true"
+ 	android:clickable="true"
+ 	android:apiKey="06P3ICrdTv7HiGad8Q4bdrr6uXfGBNsyv6yFHjg"
+	android:id="@+id/mapview"
+ />
+ 
+ <Button android:id="@+id/currloc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="Find Me"/>
+
+ <Button
+     android:id="@+id/placepins"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentBottom="true"
+     android:layout_toLeftOf="@+id/currloc"
+     android:text="place pins" />
+
+</RelativeLayout>

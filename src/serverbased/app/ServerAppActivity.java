@@ -57,7 +57,7 @@ public class ServerAppActivity extends Activity
         getSavedData();
         
         if(newUser){
-        	createJoinDialog();
+        	//createJoinDialog();
         }
         launchGeoTasks();
 

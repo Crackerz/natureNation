@@ -247,6 +247,11 @@ public class ServerAppActivity extends Activity
 		if(location == null)
 		 location = (Location) lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
+		if(location== null) {
+			Toast.makeText(this, "Can Not Get Location Information", Toast.LENGTH_SHORT).show();
+			return;
+		}
+			
 		double longitude = location.getLongitude();
 		double latitude = location.getLatitude();
     		

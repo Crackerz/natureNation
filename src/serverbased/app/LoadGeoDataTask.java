@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 
 public class LoadGeoDataTask extends AsyncTask<Void,Void,Void>{

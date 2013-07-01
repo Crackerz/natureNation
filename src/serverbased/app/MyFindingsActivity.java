@@ -21,7 +21,6 @@ import android.widget.LinearLayout.LayoutParams;
 public class MyFindingsActivity extends Activity {
 
 	private LinearLayout findingsList;
-	private int attachmentCount;
 	private ArrayList<SQLiteDBEntry> list ;
 	
 
@@ -30,7 +29,6 @@ public class MyFindingsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.findingsviewer);
 		Bundle extras = getIntent().getExtras();
-		attachmentCount = extras.getInt("count");
 		
 		 DatabaseClass b = new DatabaseClass(this);
 		 b.open();
@@ -49,10 +47,10 @@ public class MyFindingsActivity extends Activity {
 
 private void setList(){
 	int margin = 4;
-	Bitmap b;
+	
     for(int i=list.size()-1 ;i >=0 ;i--){
     	LinearLayout listItem = new LinearLayout(this);
-		listItem.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		listItem.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		listItem.setOrientation(LinearLayout.HORIZONTAL);
 		listItem.setId(i);
 	listItem.setBackgroundResource(android.R.drawable.list_selector_background);
@@ -68,7 +66,7 @@ private void setList(){
 
 		
 		ImageView image = new ImageView(this);
-		image.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		image.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		image.setScaleType(ImageView.ScaleType.FIT_CENTER);
 		//image.setImageBitmap(b);
 		LoadCachedImageTask l = new LoadCachedImageTask(f.getAbsolutePath(),image);
@@ -90,7 +88,7 @@ private void setList(){
 		text.setText(list.get(i).name);
 		text.setTextColor(Color.LTGRAY);
 		text.setTypeface(null, Typeface.BOLD);
-		LayoutParams tp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		LayoutParams tp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		tp.setMargins(margin, margin, margin, margin);
 		text.setLayoutParams(tp);
 		listItem.addView(text);
@@ -98,7 +96,7 @@ private void setList(){
 		findingsList.addView(listItem);
 		
 		View separator = new View(this);
-		LayoutParams sp = new LayoutParams(LayoutParams.FILL_PARENT, 2);
+		LayoutParams sp = new LayoutParams(LayoutParams.MATCH_PARENT, 2);
 		separator.setLayoutParams(sp);
 		separator.setBackgroundColor(Color.BLACK);
 		findingsList.addView(separator);

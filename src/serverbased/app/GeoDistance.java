@@ -3,7 +3,6 @@ package serverbased.app;
 import java.util.ArrayList;
 
 import android.util.Log;
-import android.widget.Toast;
 
 public class GeoDistance {
 

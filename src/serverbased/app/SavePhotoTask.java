@@ -20,7 +20,6 @@ class SavePhotoTask extends AsyncTask<Void, Void, Void> {
 	boolean success = false;
 	private Context c;
 	private double latitude,longitude;
-	private String l1,l2;
 	private String name = "Animal1";
 	private String username = "";
 	
@@ -82,6 +81,7 @@ class SavePhotoTask extends AsyncTask<Void, Void, Void> {
 	ExifInterface exif;
 
 	try {
+		String l1,l2;
 	    exif = new ExifInterface(filename);
 	    int num1Lat = (int)Math.floor(latitude);
 	    int num2Lat = (int)Math.floor((latitude - num1Lat) * 60);
@@ -142,7 +142,6 @@ class SavePhotoTask extends AsyncTask<Void, Void, Void> {
 		entry.close();
 		}catch(Exception e){
 			Log.d("Database Tag", e.getMessage());
-			l1 = e.getMessage();
 		}
 		Toast.makeText(c,name +  " Photo Successfully uploaded", Toast.LENGTH_LONG).show();
 		}

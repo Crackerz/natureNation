@@ -3,22 +3,18 @@ package serverbased.app;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 
 public class LoadCachedImageTask extends AsyncTask<Void,Void,Bitmap> {
 
 //	private int i;
 	private String filepath;
 	private ImageView img;
-	private ProgressBar pb;
 	
 	public LoadCachedImageTask(String filePath, ImageView img){
 	//	this.i =i;
 		this.filepath = filePath;
 		this.img = img;
-		//this.pb = pb;
 	}
 	@Override
 	protected Bitmap doInBackground(Void... params) {

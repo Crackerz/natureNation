@@ -7,7 +7,6 @@ import serverbased.app.MaxHeap.Obj;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 public class LoadNaviDataTask extends AsyncTask<Void,Void,Void> {
 // This Task is used to load the data items for the Navigation list

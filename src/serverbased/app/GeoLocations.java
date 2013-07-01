@@ -47,6 +47,7 @@ public class GeoLocations extends MapActivity
 		setContentView(R.layout.geolocation);
 		Bundle extras = getIntent().getExtras();
 		marker = getApplicationContext();
+		Object temp_data = extras.getSerializable("radiusData");
 		radiusData = (ArrayList<Entry>) extras.getSerializable("radiusData");
 		map = (MapView)findViewById(R.id.mapview);
 		findMe = (Button)findViewById(R.id.currloc);

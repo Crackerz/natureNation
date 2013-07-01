@@ -21,10 +21,7 @@ import android.widget.LinearLayout.LayoutParams;
 
 public class MyFindingActivityAlt extends Activity {
 
-	private ArrayList<String> newsTitleList;
-	private String news_content;
 	private LinearLayout findingsList;
-	private String[] testImageUrls 	= new String [6];
 	private int attachmentCount;
 	
 
@@ -47,13 +44,11 @@ public class MyFindingActivityAlt extends Activity {
 
 private void setList(){
 	int margin = 4;
-	Bitmap b;
     for(int i=0;i<attachmentCount;i++){
     	LinearLayout listItem = new LinearLayout(this);
-		listItem.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		listItem.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		listItem.setOrientation(LinearLayout.HORIZONTAL);
 		listItem.setId(i);
-	//	listItem.setBackgroundResource(R.drawable.news_item_selector);
 		listItem.setBackgroundResource(android.R.drawable.list_selector_background);
 		
 		LayoutParams ip = new LayoutParams(85, 85);
@@ -65,7 +60,7 @@ private void setList(){
 		
 
 		ImageView image = new ImageView(this);
-		image.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		image.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		image.setScaleType(ImageView.ScaleType.FIT_CENTER);
 		LoadCachedImageTask l = new LoadCachedImageTask(f.getAbsolutePath(),image);
 		l.execute();
@@ -86,7 +81,7 @@ private void setList(){
 		text.setText("Item " + i);
 		text.setTextColor(Color.LTGRAY);
 		text.setTypeface(null, Typeface.BOLD);
-		LayoutParams tp = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
+		LayoutParams tp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		tp.setMargins(margin, margin, margin, margin);
 		text.setLayoutParams(tp);
 		listItem.addView(text);
@@ -94,7 +89,7 @@ private void setList(){
 		findingsList.addView(listItem);
 		
 		View separator = new View(this);
-		LayoutParams sp = new LayoutParams(LayoutParams.FILL_PARENT, 2);
+		LayoutParams sp = new LayoutParams(LayoutParams.MATCH_PARENT, 2);
 		separator.setLayoutParams(sp);
 		separator.setBackgroundColor(Color.BLACK);
 		findingsList.addView(separator);

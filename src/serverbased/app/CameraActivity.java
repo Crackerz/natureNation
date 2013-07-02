@@ -19,7 +19,7 @@ public class CameraActivity extends Activity {
 		if(!cameraExists()) {this.finish();} //We didn't find a camera.
 		
 		Camera c = getCamera(); //Grab a pointer to the camera
-		if(c==null) {return;} //Nothing to do without a camera
+		if(c==null) {this.finish();} //Nothing to do without a camera
 
 		this.setContentView(R.layout.camera_activity);
 		
@@ -27,6 +27,12 @@ public class CameraActivity extends Activity {
 		FrameLayout cameraHolder = (FrameLayout) findViewById(R.id.camera_holder);
 		
 		cameraHolder.addView(camera);
+	}
+	
+	@Override
+	public void onPause() {
+		releaseCamera();
+		super.onPause();
 	}
 	
 	/**
@@ -55,6 +61,10 @@ public class CameraActivity extends Activity {
 		if(result==null)
 			Toast.makeText(this, "Camera Could Not Be Locked", Toast.LENGTH_SHORT).show();
 		return CameraWrapper.getInstance();
+	}
+	
+	private void releaseCamera() {
+		CameraWrapper.release();
 	}
 	
 }

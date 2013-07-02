@@ -45,7 +45,7 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback{
 			camera.setPreviewDisplay(holder);
 			camera.startPreview();
 		} catch (Exception e) {
-			Toast.makeText(context, "Unable to place camera in surfaceview!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
 		}
 	}
 
@@ -55,7 +55,7 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback{
 			camera.setPreviewDisplay(holder);
 			camera.startPreview();
 		} catch(Exception e) {
-			Toast.makeText(context, "Unable to place camera in surfaceview!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
 		}
 	}
 
